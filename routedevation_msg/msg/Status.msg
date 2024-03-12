@@ -1,0 +1,12 @@
+bool	offcource_status
+float64	offcource_out_distance
+float64	offcource_goal_distance
+float64	offcource_start_lat
+float64	offcource_start_lon
+float64	offcource_dest_lat
+float64	offcource_dest_lon
+float64	offcource_goal_lat
+float64	offcource_goal_lon
+float64	offcource_goal_x
+float64	offcource_goal_y
+
