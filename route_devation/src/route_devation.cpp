@@ -61,6 +61,7 @@ void RouteDevation::drive_callback(const std::shared_ptr<DriveMSG> drive)
 			{
 				tm_now_x=-gps_distance.distance_x;
 			}
+			printf("end_x:%lf,end_y:%lf,now_x:%lf,now_y:%lf\n\n",tm_end_x,tm_end_y,tm_now_x,tm_now_y);
 			devation_offset = tm_end_x - (tm_now_x - (tm_end_x*tm_now_y)/tm_end_x);
 			devation_dist = fabs((tm_end_y)/(tm_end_x)*tm_now_x + (-1)*tm_now_y)/sqrt(pow((tm_end_y)/(tm_end_x),2) + 1);
 			if(devation_dist > DEVATION_RANGE)
@@ -80,7 +81,7 @@ void RouteDevation::drive_callback(const std::shared_ptr<DriveMSG> drive)
 			{
 				if(route_flag>0)
 				{
-					route_flag=route_flag-3;
+					route_flag=0;
 				}
 				status.offcource_status=false;
 			}
@@ -98,6 +99,7 @@ void RouteDevation::drive_callback(const std::shared_ptr<DriveMSG> drive)
 	}
 	else
 	{
+		route_flag=0;
 		status.offcource_out_distance=0;
 		status.offcource_goal_distance=0;
 		status.offcource_start_lat=lat_start;
