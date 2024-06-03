@@ -120,6 +120,7 @@ void RouteDevation::drive_callback(const std::shared_ptr<DriveMSG> drive)
 		status.offcource_goal_x=lat_now;
 		status.offcource_goal_y=long_now;
 	}
+RCLCPP_INFO(this->get_logger(), "drive_info lat_now=%lf,long_now=%lf,%d",lat_now,long_now,__LINE__ );
 	pub_status_->publish(status);
 }
 void RouteDevation::odom_callback(const std::shared_ptr<OdomMSG> odom)
@@ -130,6 +131,7 @@ void RouteDevation::gps_callback(const std::shared_ptr<GpsMSG> gps)
 {
 	lat_now=gps->latitude;
 	long_now=gps->longitude;
+RCLCPP_INFO(this->get_logger(), "lat_now=%lf,long_now=%lf,%d",lat_now,long_now,__LINE__ );
 	test_lp++;
 	usleep(10000);
 }

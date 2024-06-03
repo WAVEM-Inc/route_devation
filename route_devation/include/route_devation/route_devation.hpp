@@ -30,9 +30,9 @@ class RouteDevation : public rclcpp::Node{
 	void drive_callback(const std::shared_ptr<DriveMSG> drive);
 
 	int drive_status;
-	float lat_start, long_start, lat_end, long_end, lat_now, long_now;
-	float tm_end_x,tm_end_y, tm_now_x,tm_now_y,tm_contact_x,tm_contact_y;
-	float devation_dist, route_angle, contact_angle,devation_offset;
+	double lat_start, long_start, lat_end, long_end, lat_now, long_now;
+	double tm_end_x,tm_end_y, tm_now_x,tm_now_y,tm_contact_x,tm_contact_y;
+	double devation_dist, route_angle, contact_angle,devation_offset;
 	int route_flag=0;
 	int test_lp=0;
     public :
