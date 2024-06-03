@@ -34,6 +34,7 @@ class RouteDevation : public rclcpp::Node{
 	float tm_end_x,tm_end_y, tm_now_x,tm_now_y,tm_contact_x,tm_contact_y;
 	float devation_dist, route_angle, contact_angle,devation_offset;
 	int route_flag=0;
+	int test_lp=0;
     public :
         RouteDevation();
 	

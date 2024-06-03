@@ -110,7 +110,7 @@ void RouteDevation::drive_callback(const std::shared_ptr<DriveMSG> drive)
 	{
 		route_flag=0;
 		status.offcource_out_distance=0;
-		status.offcource_goal_distance=0;
+		status.offcource_goal_distance=test_lp;
 		status.offcource_start_lat=lat_start;
 		status.offcource_start_lon=long_start;
 		status.offcource_dest_lat=lat_end;
@@ -130,5 +130,7 @@ void RouteDevation::gps_callback(const std::shared_ptr<GpsMSG> gps)
 {
 	lat_now=gps->latitude;
 	long_now=gps->longitude;
+	test_lp++;
+	usleep(10000);
 }
 
