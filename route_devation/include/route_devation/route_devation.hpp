@@ -1,6 +1,7 @@
 #ifndef ROUTE_DEVATION_LISTENER_HPP__
 #define ROUTE_DEVATION_LISTENER_HPP__
 #define DEVATION_RANGE 0.5
+#define DEVATION_OFFSET 1.2
 
 #include <iostream>
 #include <fstream>
