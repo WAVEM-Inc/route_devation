@@ -73,7 +73,7 @@ void RouteDevation::drive_callback(const std::shared_ptr<DriveMSG> drive)
 			{
 				devation_dist = fabs((tm_end_y)/(tm_end_x)*tm_now_x + (-1)*tm_now_y)/sqrt(pow((tm_end_y)/(tm_end_x),2) + 1);
 			}
-			if(devation_dist > DEVATION_RANGE)
+			if((devation_dist > DEVATION_RANGE) && (gps_distance.distance > DEVATION_OFFSET))
 			{
 				route_flag++;
 				if(route_flag >= 10)
